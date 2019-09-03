@@ -12,6 +12,7 @@ import java.io.PrintWriter;
 public class App extends HttpServlet{
     @Override
     public void doGet (HttpServletRequest req, HttpServletResponse res) throws ServletException{
+        String diretorio = getServletContext().getRealPath("WebContent/WEB-INF/");
         try {
             PrintWriter pw = res.getWriter();
             // pw.write("Build com gradle funcionando!!!");
