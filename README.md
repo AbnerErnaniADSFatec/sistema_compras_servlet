@@ -5,5 +5,5 @@ Um servidor básico usando a linguagem de programação Java e Servlet, necessá
 ## Executar com o gradle
 
 ```
-$ gradle runApp
+$ gradle apprun
 ```
