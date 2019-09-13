@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.annotation.WebServlet;
 import java.io.PrintWriter;
 
-@WebServlet(urlPatterns = {"/"})
+@WebServlet(urlPatterns = {"/server"})
 public class App extends HttpServlet{
     @Override
     public void doGet (HttpServletRequest req, HttpServletResponse res) throws ServletException{
