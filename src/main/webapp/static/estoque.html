@@ -1,10 +1,48 @@
 <html>
     <head>
         <meta charset = "UTF-8">
-        <title>LoginInfo</title>
+        <title>Lista de Produtos</title>
         <link rel = "stylesheet" href = "../styles/style.css">
     </head>
     <body>
-        <h1>Funcionaaaaaa!</h1>
+        <h4 class = "is-center">Lista de Produtos</h4>
+        <div class = "container">
+            <div class = "hero is-full-screen">
+                <nav class = "tabs is-center">
+                    <a>Home</a>
+                    <a href = "login.html">Logout</a>
+                </nav>
+                <div id = "estoque">
+                    <div class = "row">
+                        <div class = "col">
+                            <form method="POST">
+                                <table class = "striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Nome</th>
+                                            <th>Descrição</th>
+                                            <th>Preço</th>
+                                            <th>Código do Produto</th>
+                                            <th>Quantidade</th>
+                                            <th>Unidade</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>KitKat</td>
+                                            <td>Chocolate</td>
+                                            <td>R$ 2,10</td>
+                                            <td>274671264128</td>
+                                            <td>5000</td>
+                                            <td>caixas</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
