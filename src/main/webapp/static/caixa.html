@@ -3,6 +3,7 @@
         <meta charset = "UTF-8">
         <title>Caixa</title>
         <link rel = "stylesheet" href = "../styles/style.css">
+        <link rel = "stylesheet" href = "../styles/caixa.css">
     </head>
     <body>
         <h4 class = "is-center">Busca de Produtos</h4>
@@ -18,11 +19,71 @@
                 <div id = "estoque">
                     <div class = "row">
                         <div class = "col">
-
+                            <div class = "search-box">
+                                <form action = "caixa.html" method = "GET">
+                                    <div class = "row">
+                                        <div class = "col-10">
+                                            <div>
+                                                <input type = "text" name = "name" placeholder = "Código do Produto"/>
+                                            </div>
+                                        </div>
+                                        <div class = "col">
+                                            <button class = "button icon-only">
+                                                <img src = "https://icongr.am/feather/search.svg?size=24">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <form action = "caixa.html" method = "POST">
+                                    <table class = "striped">
+                                        <caption>Resultado da pesquisa</caption>
+                                        <thead>
+                                            <tr>
+                                                <th>Nome</th>
+                                                <th>Descrição</th>
+                                                <th>Preço</th>
+                                                <th>Código do Produto</th>
+                                                <th>Quantidade</th>
+                                                <th>Unidade</th>
+                                                <th></th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>KitKat</td>
+                                                <td>Chocolate</td>
+                                                <td>R$ 2,10</td>
+                                                <td>274671264128</td>
+                                                <td>
+                                                    <div class = "qtd-prod">
+                                                        <input type = "number" name = "name"/>
+                                                    </div>
+                                                </td>
+                                                <td>unid</td>
+                                                <td>
+                                                    <input type = "submit" value = "Comprar" style = "align-items: center"/>
+                                                </td>
+                                                <td>
+                                                    <input type = "reset" value = "Cancelar" style = "align-items: center"/>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </form>
+                                <form action = "relatorio.html" method = "POST">
+                                    <input type = "submit" value = "Finalizar Compra" style = "align-items: center"/>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <footer class = "is-text-center">
+            <p>
+                Sistema para o gerennciamento de caixa
+            </p>
+        </footer>
     </body>
 </html>

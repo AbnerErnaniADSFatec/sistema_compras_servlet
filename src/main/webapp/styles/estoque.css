@@ -1,4 +1,4 @@
-p .table-caption {
+table caption {
     padding: 30px;
-    color: blue;
+    text-align: left;
 }
