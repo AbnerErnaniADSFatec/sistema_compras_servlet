@@ -6,6 +6,12 @@ div .qtd-prod {
     width: 70px;
 }
 
+div .form-foot {
+    height: 20em;
+    margin-top: 15em;
+    position: relative;
+}
+
 table caption {
     padding: 30px;
     text-align: left;
