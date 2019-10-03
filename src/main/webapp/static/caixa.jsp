@@ -1,26 +1,28 @@
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ page contentType = "text/html" pageEncoding = "UTF-8" %>
 <html>
     <head>
         <meta charset = "UTF-8">
         <title>Caixa</title>
-        <link rel = "stylesheet" href = "../styles/style.css">
-        <link rel = "stylesheet" href = "../styles/caixa.css">
+        <link rel = "icon" type = "image/x-icon" href = "assets/favicon.ico">
+        <link rel = "stylesheet" href = "styles/style.css">
+        <link rel = "stylesheet" href = "styles/caixa.css">
     </head>
     <body>
         <h4 class = "is-center">Busca de Produtos</h4>
         <div class = "container">
             <div class = "hero is-full-screen">
                 <nav class = "tabs is-center">
-                    <a href = "./caixa.html">Home</a>
-                    <a href = "./relatorio.html">Relatório</a>
-                    <a href = "./estoque.html">Estoque</a>
-                    <a href = "./products-form.html">Cadastro de Produtos</a>
-                    <a href = "./login.html">Logout</a>
+                    <a href = "caixa">Home</a>
+                    <a href = "relatorio">Relatório</a>
+                    <a href = "estoque">Estoque</a>
+                    <a href = "cadastro">Cadastro de Produtos</a>
                 </nav>
                 <div id = "estoque">
                     <div class = "row">
                         <div class = "col">
                             <div class = "search-box">
-                                <form action = "caixa.html" method = "GET">
+                                <form action = "caixa" method = "GET">
                                     <div class = "row">
                                         <div class = "col-10">
                                             <div>
@@ -34,7 +36,7 @@
                                         </div>
                                     </div>
                                 </form>
-                                <form action = "caixa.html" method = "POST">
+                                <form action = "caixa" method = "POST">
                                     <table class = "striped">
                                         <caption>Resultado da pesquisa</caption>
                                         <thead>
@@ -71,7 +73,7 @@
                                         </tbody>
                                     </table>
                                 </form>
-                                <form action = "relatorio.html" method = "POST">
+                                <form action = "relatorio" method = "POST">
                                     <table class = "striped">
                                         <thead>
                                             <tr>

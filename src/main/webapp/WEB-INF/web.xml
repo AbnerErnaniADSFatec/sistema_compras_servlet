@@ -1,0 +1,68 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<web-app xmlns = "http://xmlns.jcp.org/xml/ns/javaee"
+  xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation = "http://xmlns.jcp.org/xml/ns/javaee
+                      http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+  version = "3.1"
+  metadata-complete = "true">
+
+    <description>
+      Sistema web para compra de mercadorias
+    </description>
+    <display-name>App</display-name>
+
+    <servlet>
+        <servlet-name>App</servlet-name>
+        <servlet-class>ex_01_servlet_basico.App</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>Caixa</servlet-name>
+        <servlet-class>ex_01_servlet_basico.controller.Caixa</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>Cadastro</servlet-name>
+        <servlet-class>ex_01_servlet_basico.controller.Cadastro</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>Listagem</servlet-name>
+        <servlet-class>ex_01_servlet_basico.controller.Listagem</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>Relatorio</servlet-name>
+        <servlet-class>ex_01_servlet_basico.controller.Relatorio</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>App</servlet-name>
+        <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>Caixa</servlet-name>
+        <url-pattern>/caixa</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>Cadastro</servlet-name>
+        <url-pattern>/cadastro</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>Listagem</servlet-name>
+        <url-pattern>/estoque</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>Relatorio</servlet-name>
+        <url-pattern>/relatorio</url-pattern>
+    </servlet-mapping>
+</web-app>

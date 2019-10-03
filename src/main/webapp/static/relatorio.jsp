@@ -1,25 +1,27 @@
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ page contentType = "text/html" pageEncoding = "UTF-8" %>
 <html>
     <head>
         <meta charset = "UTF-8">
         <title>Relatório</title>
-        <link rel = "stylesheet" href = "../styles/style.css">
-        <link rel = "stylesheet" href = "../styles/relatorio.css">
+        <link rel = "icon" type = "image/x-icon" href = "assets/doc.ico">
+        <link rel = "stylesheet" href = "styles/style.css">
+        <link rel = "stylesheet" href = "styles/relatorio.css">
     </head>
     <body>
         <h4 class = "is-center">Relatórios</h4>
         <div class = "container">
             <div class = "hero is-full-screen">
                 <nav class = "tabs is-center">
-                    <a href = "./caixa.html">Home</a>
-                    <a href = "./relatorio.html">Relatório</a>
-                    <a href = "./estoque.html">Estoque</a>
-                    <a href = "./products-form.html">Cadastro de Produtos</a>
-                    <a href = "./login.html">Logout</a>
+                    <a href = "caixa">Home</a>
+                    <a href = "relatorio">Relatório</a>
+                    <a href = "estoque">Estoque</a>
+                    <a href = "cadastro">Cadastro de Produtos</a>
                 </nav>
                 <div id = "estoque">
                     <div class = "row">
                         <div class = "col">
-                            <form action = "relatorio.html" method = "GET">
+                            <form action = "relatorio" method = "GET">
                                 <table class = "striped">
                                     <caption>
                                         <div class = "card">
@@ -54,7 +56,7 @@
                                     </tbody>
                                 </table>
                             </form>
-                            <form action = "relatorio.html" method = "GET">
+                            <form action = "relatorio" method = "GET">
                                 <table class = "striped">
                                     <thead>
                                         <tr>
@@ -72,7 +74,7 @@
                                     </tbody>
                                 </table>
                             </form>
-                            <form action = "relatorio.html" method = "GET">
+                            <form action = "relatorio" method = "GET">
                                 <table class = "striped">
                                     <caption>
                                         <div class = "card">
@@ -107,7 +109,7 @@
                                     </tbody>
                                 </table>
                             </form>
-                            <form action = "relatorio.html" method = "GET">
+                            <form action = "relatorio" method = "GET">
                                 <table class = "striped">
                                     <thead>
                                         <tr>

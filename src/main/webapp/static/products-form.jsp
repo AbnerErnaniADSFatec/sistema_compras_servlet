@@ -1,25 +1,27 @@
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ page contentType = "text/html" pageEncoding = "UTF-8" %>
 <html>
     <head>
         <meta charset = "UTF-8">
         <title>Cadastro de Produtos</title>
-        <link rel = "stylesheet" href = "../styles/style.css">
+        <link rel = "icon" type = "image/x-icon" href = "assets/save.ico">
+        <link rel = "stylesheet" href = "styles/style.css">
     </head>
     <body>
         <h4 class = "is-center">Cadastro de Produtos</h4>
         <div class = "container">
             <div class = "hero is-full-screen">
                 <nav class = "tabs is-center">
-                    <a href = "./caixa.html">Home</a>
-                    <a href = "./relatorio.html">Relatório</a>
-                    <a href = "./estoque.html">Estoque</a>
-                    <a href = "./products-form.html">Cadastro de Produtos</a>
-                    <a href = "./login.html">Logout</a>
+                    <a href = "caixa">Home</a>
+                    <a href = "relatorio">Relatório</a>
+                    <a href = "estoque">Estoque</a>
+                    <a href = "cadastro">Cadastro de Produtos</a>
                 </nav>
                 <div id = "estoque">
                     <div class = "row">
                         <div class = "col">
                             <h3>Cadastrar novo produto</h3>
-                            <form action = "estoque.html" method = "POST">
+                            <form action = "estoque" method = "POST">
                                 Nome: <input type = "text" name = "name"/><br>
                                 Descrição: <input type = "text" name = "description"/><br>
                                 Preço (R$): <input type = "number" name = "price"/><br>
