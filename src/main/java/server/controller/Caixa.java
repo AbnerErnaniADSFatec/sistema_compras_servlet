@@ -1,4 +1,4 @@
-package ex_01_servlet_basico.controller;
+package server.controller;
 
 import javax.servlet.ServletException;
 
@@ -8,11 +8,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.annotation.WebServlet;
 import java.io.PrintWriter;
 
-public class Cadastro extends HttpServlet{
+public class Caixa extends HttpServlet{
     @Override
     public void doGet (HttpServletRequest req, HttpServletResponse res) throws ServletException{
         try {
-            req.getRequestDispatcher("/static/products-form.jsp").forward(req, res);
+            req.getRequestDispatcher("/static/caixa.jsp").forward(req, res);
         } catch (Exception e) {
             System.out.println("Erro em 10 ou Servlet");
         }

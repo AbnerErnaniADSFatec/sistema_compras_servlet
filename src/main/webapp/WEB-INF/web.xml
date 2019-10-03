@@ -18,27 +18,27 @@ and open the template in the editor.
 
     <servlet>
         <servlet-name>App</servlet-name>
-        <servlet-class>ex_01_servlet_basico.App</servlet-class>
+        <servlet-class>server.App</servlet-class>
     </servlet>
 
     <servlet>
         <servlet-name>Caixa</servlet-name>
-        <servlet-class>ex_01_servlet_basico.controller.Caixa</servlet-class>
+        <servlet-class>server.controller.Caixa</servlet-class>
     </servlet>
 
     <servlet>
         <servlet-name>Cadastro</servlet-name>
-        <servlet-class>ex_01_servlet_basico.controller.Cadastro</servlet-class>
+        <servlet-class>server.controller.Cadastro</servlet-class>
     </servlet>
 
     <servlet>
         <servlet-name>Listagem</servlet-name>
-        <servlet-class>ex_01_servlet_basico.controller.Listagem</servlet-class>
+        <servlet-class>server.controller.Listagem</servlet-class>
     </servlet>
 
     <servlet>
         <servlet-name>Relatorio</servlet-name>
-        <servlet-class>ex_01_servlet_basico.controller.Relatorio</servlet-class>
+        <servlet-class>server.controller.Relatorio</servlet-class>
     </servlet>
 
     <servlet-mapping>

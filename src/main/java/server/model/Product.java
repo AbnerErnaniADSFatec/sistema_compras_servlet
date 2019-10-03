@@ -1,6 +1,6 @@
-package ex_01_servlet_basico.model;
+package server.model;
 
-public class Produto {
+public class Product {
     private Long id;
     private String name;
     private String description;
@@ -9,7 +9,7 @@ public class Produto {
     private int amount;
     private String unit;
 
-    public Produto(String name, String description, float price, String code, int amount, String unit) {
+    public Product(String name, String description, float price, String code, int amount, String unit) {
         this.name = name;
         this.description = description;
         this.price = price;
@@ -58,7 +58,7 @@ public class Produto {
         return this.amount;
     }
 
-    public void set Amount(int amount) {
+    public void setAmount(int amount) {
         this.amount = amount;
     }
 

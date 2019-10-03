@@ -1,4 +1,4 @@
-package ex_01_servlet_basico.controller;
+package server.controller;
 
 import javax.servlet.ServletException;
 
