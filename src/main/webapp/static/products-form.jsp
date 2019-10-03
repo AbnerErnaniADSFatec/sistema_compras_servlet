@@ -21,7 +21,7 @@
                     <div class = "row">
                         <div class = "col">
                             <h3>Cadastrar novo produto</h3>
-                            <form action = "estoque" method = "POST">
+                            <form action = "estoque" method = "GET">
                                 Nome: <input type = "text" name = "name"/><br>
                                 Descrição: <input type = "text" name = "description"/><br>
                                 Preço (R$): <input type = "number" name = "price"/><br>

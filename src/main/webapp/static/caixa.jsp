@@ -36,7 +36,7 @@
                                         </div>
                                     </div>
                                 </form>
-                                <form action = "caixa" method = "POST">
+                                <form action = "caixa" method = "GET">
                                     <table class = "striped">
                                         <caption>Resultado da pesquisa</caption>
                                         <thead>
@@ -73,7 +73,7 @@
                                         </tbody>
                                     </table>
                                 </form>
-                                <form action = "relatorio" method = "POST">
+                                <form action = "relatorio" method = "GET">
                                     <table class = "striped">
                                         <thead>
                                             <tr>
