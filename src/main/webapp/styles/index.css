@@ -1,0 +1,25 @@
+body {
+    text-align: center;
+}
+
+h3 {
+    padding-top: 20px;
+}
+
+div .greetings {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 16em;
+    position: relative;
+}
+
+div .form {
+    height: 10em;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    vertical-align: middle;
+}
