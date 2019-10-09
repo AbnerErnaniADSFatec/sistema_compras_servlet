@@ -59,7 +59,7 @@
                                                 <td>274671264128</td>
                                                 <td>
                                                     <div class = "qtd-prod">
-                                                        <input type = "number" name = "name"/>
+                                                        <input type = "number" min = "1" name = "name"/>
                                                     </div>
                                                 </td>
                                                 <td>unid</td>

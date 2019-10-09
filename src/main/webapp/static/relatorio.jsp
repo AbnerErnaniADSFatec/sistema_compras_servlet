@@ -26,7 +26,7 @@
                                     <caption>
                                         <div class = "card">
                                             <p>
-                                                19/09/2019 - 08h:32  
+                                                Relatório 19/09/2019 - 08h:32  
                                             </p>
                                         </div>
                                     </caption>
@@ -49,59 +49,6 @@
                                             <td>
                                                 <div class = "card">
                                                     <p>3</p>
-                                                </div>
-                                            </td>
-                                            <td>unid</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </form>
-                            <form action = "relatorio" method = "GET">
-                                <table class = "striped">
-                                    <thead>
-                                        <tr>
-                                            <th>Moeda</th>
-                                            <th>Total</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>R$</td>
-                                            <td>
-                                                <label>0,00</label>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </form>
-                            <form action = "relatorio" method = "GET">
-                                <table class = "striped">
-                                    <caption>
-                                        <div class = "card">
-                                            <p>
-                                                19/09/2019 - 08h:15
-                                            </p>
-                                        </div>
-                                    </caption>
-                                    <thead>
-                                        <tr>
-                                            <th>Nome</th>
-                                            <th>Descrição</th>
-                                            <th>Preço</th>
-                                            <th>Código do Produto</th>
-                                            <th>Quantidade</th>
-                                            <th>Unidade</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Snikers</td>
-                                            <td>Chocolate</td>
-                                            <td>R$ 3,49</td>
-                                            <td>274671223541</td>
-                                            <td>
-                                                <div class = "card">
-                                                    <p>4</p>
                                                 </div>
                                             </td>
                                             <td>unid</td>
