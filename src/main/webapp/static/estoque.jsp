@@ -1,5 +1,7 @@
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <%@ page contentType = "text/html" pageEncoding = "UTF-8" %>
+<%@ page import = "java.util.*" %>
+<%@ page import = "server.model.Product" %>
 <html>
     <head>
         <meta charset = "UTF-8">
@@ -35,7 +37,21 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
+                                        <%
+                                            List<Product> products = (List<Product>) request.getAttribute("products");
+                                            Iterator it = products.iterator();
+                                            while(it.hasNext()) {
+                                                out.print("<tr>");
+                                                    out.print("<td>" + it.next().getName() + "</td>");
+                                                    out.print("<td>" + it.next().getDescription() + "</td>");
+                                                    out.print("<td>" + it.next().getCurrency() + " " + it.next().getPrice() + "</td>");
+                                                    out.print("<td>" + it.next().getCode() + "</td>");
+                                                    out.print("<td>" + it.next().getAmount() + "</td>");
+                                                    out.print("<td>" + it.next().getUnit() + "</td>");
+                                                out.print("</tr>");
+                                            }
+                                        %>
+                                        <!-- <tr>
                                             <td>KitKat</td>
                                             <td>Chocolate</td>
                                             <td>R$ 2,10</td>
@@ -58,7 +74,7 @@
                                             <td>274671132423</td>
                                             <td>1300</td>
                                             <td>unid</td>
-                                        </tr>
+                                        </tr> -->
                                     </tbody>
                                 </table>
                             </form>

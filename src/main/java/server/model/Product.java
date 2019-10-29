@@ -4,22 +4,20 @@ public class Product {
     private Long id;
     private String name;
     private String description;
+    private String currency;
     private float price;
     private String code;
     private int amount;
     private String unit;
 
-    public Product(String name, String description, float price, String code, int amount, String unit) {
-        this.name = name;
-        this.description = description;
-        this.price = price;
-        this.code = code;
-        this.amount = amount;
-        this.unit = unit;
-    }
+    public Product() { }
 
     public Long getId() {
         return this.id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -36,6 +34,14 @@ public class Product {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getCurrency() {
+        return this.currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
     }
 
     public float getPrice() {
