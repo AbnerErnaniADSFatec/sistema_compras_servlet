@@ -1,23 +1,32 @@
 package server.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity(name = "produtos")
 public class Product {
+    @Id
     private Long id;
+    @Column(name = "name")
     private String name;
+    @Column(name = "description")
     private String description;
+    @Column(name = "currency")
     private String currency;
+    @Column(name = "price")
     private float price;
+    @Column(name = "code")
     private String code;
+    @Column(name = "amount")
     private int amount;
+    @Column(name = "unit")
     private String unit;
 
     public Product() { }
 
     public Long getId() {
         return this.id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getName() {

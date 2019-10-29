@@ -37,57 +37,19 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <!-- <%
-                                            List<Product> products = (List<Product>) request.getAttribute("products");
-                                            for ( Product prod : products ){
-                                                out.print("<tr>");
-                                                out.print("<td>" + prod.getName() + "</td>");
-                                                out.print("<td>" + prod.getDescription() + "</td>");
-                                                out.print("<td>" + prod.getCurrency() + " " + prod.getPrice() + "</td>");
-                                                out.print("<td>" + prod.getCode() + "</td>");
-                                                out.print("<td>" + prod.getAmount() + "</td>");
-                                                out.print("<td>" + prod.getUnit() + "</td>");
-                                                out.print("</tr>");
-                                            }
-                                        %> -->
-                                        <!-- <%
-                                            List<Product> products = (List<Product>) request.getAttribute("products");
-                                            Iterator it = products.iterator();
-                                            while(it.hasNext()) {
-                                                out.print("<tr>");
-                                                out.print("<td>" + it.next().getName() + "</td>");
-                                                out.print("<td>" + it.next().getDescription() + "</td>");
-                                                out.print("<td>" + it.next().getCurrency() + " " + it.next().getPrice() + "</td>");
-                                                out.print("<td>" + it.next().getCode() + "</td>");
-                                                out.print("<td>" + it.next().getAmount() + "</td>");
-                                                out.print("<td>" + it.next().getUnit() + "</td>");
-                                                out.print("</tr>");
-                                            }
-                                        %> -->
-                                        <!-- <tr>
-                                            <td>KitKat</td>
-                                            <td>Chocolate</td>
-                                            <td>R$ 2,10</td>
-                                            <td>274671264128</td>
-                                            <td>5000</td>
-                                            <td>unid</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Snikers</td>
-                                            <td>Chocolate</td>
-                                            <td>R$ 3,49</td>
-                                            <td>274671223541</td>
-                                            <td>1500</td>
-                                            <td>unid</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Chokito</td>
-                                            <td>Chocolate</td>
-                                            <td>R$ 2,49</td>
-                                            <td>274671132423</td>
-                                            <td>1300</td>
-                                            <td>unid</td>
-                                        </tr> -->
+                                    <%
+                                        List<Product> products = (List<Product>) request.getAttribute("products");
+                                        for ( Product prod : products ){
+                                            out.print("<tr>");
+                                            out.print("<td>" + prod.getName() + "</td>");
+                                            out.print("<td>" + prod.getDescription() + "</td>");
+                                            out.print("<td>" + prod.getCurrency() + " " + String.format("%.2f", prod.getPrice()) + "</td>");
+                                            out.print("<td>" + prod.getCode() + "</td>");
+                                            out.print("<td>" + prod.getAmount() + "</td>");
+                                            out.print("<td>" + prod.getUnit() + "</td>");
+                                            out.print("</tr>");
+                                        }
+                                    %>
                                     </tbody>
                                 </table>
                             </form>
