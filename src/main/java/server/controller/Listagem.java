@@ -7,8 +7,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.annotation.WebServlet;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+// import java.util.ArrayList;
+// import java.util.List;
 import server.model.Product;
 
 public class Listagem extends HttpServlet{
@@ -50,8 +51,15 @@ public class Listagem extends HttpServlet{
             prod3.setUnit("unid.");
             products.add(prod3);
 
-            req.setAttribute("products", products);
-            req.getRequestDispatcher("/static/estoque.jsp").forward(req, res);
+            // req.setAttribute("products", products);
+            // req.getRequestDispatcher("/static/estoque.jsp").forward(req, res);
+
+            response.setContentType("text/html");
+            PrintWriter out = response.getWriter();
+            for ( Product prod : products ) {
+                out.print("<br> Nome: " + prod.getName());
+            }
+
         } catch (Exception e) {
             System.out.println("Erro em 10 ou Servlet");
         }
