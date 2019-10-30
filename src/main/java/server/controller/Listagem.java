@@ -18,9 +18,9 @@ import server.model.Product;
 public class Listagem extends HttpServlet{
     @Override
     public void doGet (HttpServletRequest req, HttpServletResponse res) throws ServletException{
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("estoque");     
+        EntityManager em = emf.createEntityManager();
         try {
-            EntityManagerFactory emf = Persistence.createEntityManagerFactory("estoque");     
-            EntityManager em = emf.createEntityManager();
 
             Product prod1 = new Product();
             prod1.setName("KitKat");
