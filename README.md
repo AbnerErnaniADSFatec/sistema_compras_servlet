@@ -28,14 +28,14 @@ Um servidor básico usando a linguagem de programação Java e Servlet, necessá
 ## Configurar acesso remoto
 ### Comentar a linha do arquivo `/etc/mysql/mariadb.conf.d/50-server.cnf`
 ```
-# bind-address = <some ip-address>
+# bind-address = localhost
 ```
 ### Conectar ao banco e executar o script
 ```
 MariaDB > CREATE USER 'root'@'localhost' IDENTIFIED BY 'root';
 ```
 ```
-MariaDB > GRANT ALL PRIVILEGES ON *.* TO 'root'@'192.168.1.20' IDENTIFIED BY 'my-new-password' WITH GRANT OPTION;
+MariaDB > GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' IDENTIFIED BY 'root' WITH GRANT OPTION;
 ```
 ```
 MariaDB > SELECT User, Host FROM mysql.user WHERE Host <> 'localhost';

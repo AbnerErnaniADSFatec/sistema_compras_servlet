@@ -8,7 +8,7 @@
     <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
     <class>server.model.Product</class>
     <properties>
-      <property name = "hibernate.dialect" value = "org.hibernate.dialect.MySQL5InnoDBDialect" />
+      <property name = "hibernate.dialect" value = "org.hibernate.dialect.MySQLDialect" />
       <property name = "javax.persistence.jdbc.driver" value = "org.mariadb.jdbc.Driver" />
       <property name = "javax.persistence.jdbc.url" value = "jdbc:mysql://150.163.17.142:3306/estoque" />
       <property name = "javax.persistence.jdbc.user" value = "servlet" />
