@@ -18,11 +18,13 @@ import server.model.Product;
 public class Listagem extends HttpServlet{
     @Override
     public void doGet (HttpServletRequest req, HttpServletResponse res) throws ServletException{
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("estoque");     
-        EntityManager em = emf.createEntityManager();
         try {
 
-            Product prod1 = new Product();
+            EntityManagerFactory emf = Persistence.createEntityManagerFactory("estoque");     
+            EntityManager em = emf.createEntityManager();
+
+            /* Product prod1 = new Product();
+            prod1.setId(1L);
             prod1.setName("KitKat");
             prod1.setDescription("O melhor chocolate do mundo!");
             prod1.setCurrency("R$");
@@ -36,6 +38,7 @@ public class Listagem extends HttpServlet{
             em.getTransaction().commit();
 
             Product prod2 = new Product();
+            prod2.setId(2L);
             prod2.setName("Snikers");
             prod2.setDescription("Amendoin e Caramelo!");
             prod2.setCurrency("R$");
@@ -49,6 +52,7 @@ public class Listagem extends HttpServlet{
             em.getTransaction().commit();
 
             Product prod3 = new Product();
+            prod3.setId(3L);
             prod3.setName("Chokito");
             prod3.setDescription("Chocolate Chokito");
             prod3.setCurrency("R$");
@@ -59,9 +63,9 @@ public class Listagem extends HttpServlet{
 
             em.getTransaction().begin();
             em.persist(prod3);
-            em.getTransaction().commit();
+            em.getTransaction().commit(); */
 
-            Query query = em.createQuery("SELECT prod FROM produtos prod ");
+            Query query = em.createQuery("SELECT prod FROM produtos prod");
             List<Product> products = query.getResultList();
 
             em.close();

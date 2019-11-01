@@ -1,4 +1,4 @@
-package server.model;
+/* package server.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,4 +13,4 @@ public class ProductDAOImpl implements ProductDAO{
     public Product findByID(Long id);
     public Product updateProduct(Long id);
     public Product deleteProduct(Long id);
-}
+} */

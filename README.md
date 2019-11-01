@@ -16,11 +16,11 @@ Um servidor básico usando a linguagem de programação Java e Servlet, necessá
 
 ## Após a instalação do MariaDB
 ```
-# mariadb -u root -p
+# mariadb -u servlet -p
 ```
 ```
 > use mysql;
-> update user set plugin='' where User='root';
+> update user set plugin='' where User='servlet';
 > flush privileges;
 > exit
 ```
@@ -30,15 +30,26 @@ Um servidor básico usando a linguagem de programação Java e Servlet, necessá
 ```
 # bind-address = localhost
 ```
-### Conectar ao banco e executar o script
+
+### Reinicie o serviço
 ```
-MariaDB > CREATE USER 'root'@'localhost' IDENTIFIED BY 'root';
+# /etc/init.d/mysql restart
+```
+
+### Conectar ao banco e executar o script para criar a base de dados
+```
+MariaDB > CREATE DATABASE estoque;
+```
+
+### Conectar ao banco e executar o script para criar o usuário e dar acesso ao banco
+```
+MariaDB > CREATE USER 'servlet' IDENTIFIED BY 'servlet';
 ```
 ```
-MariaDB > GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' IDENTIFIED BY 'root' WITH GRANT OPTION;
+MariaDB > GRANT ALL PRIVILEGES ON *.* TO 'servlet' IDENTIFIED BY 'servlet' WITH GRANT OPTION;
 ```
 ```
-MariaDB > SELECT User, Host FROM mysql.user WHERE Host <> 'localhost';
+MariaDB > SELECT User, Host FROM mysql.user;
 ```
 
 ## Executar com o gradle
