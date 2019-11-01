@@ -33,7 +33,7 @@ and open the template in the editor.
 
     <servlet>
         <servlet-name>Listagem</servlet-name>
-        <servlet-class>server.controller.Listagem</servlet-class>
+        <servlet-class>server.controller.Estoque</servlet-class>
     </servlet>
 
     <servlet>

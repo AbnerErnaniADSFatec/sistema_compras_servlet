@@ -12,7 +12,7 @@ public class Cadastro extends HttpServlet{
     @Override
     public void doGet (HttpServletRequest req, HttpServletResponse res) throws ServletException{
         try {
-            req.getRequestDispatcher("/static/products-form.jsp").forward(req, res);
+            req.getRequestDispatcher("/static/cadastro.jsp").forward(req, res);
         } catch (Exception e) {
             System.out.println("Erro em 10 ou Servlet");
         }
