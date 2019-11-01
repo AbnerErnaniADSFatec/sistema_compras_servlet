@@ -16,7 +16,7 @@ Um servidor básico usando a linguagem de programação Java e Servlet, necessá
 
 ## Após a instalação do MariaDB
 ```
-# mariadb -u servlet -p
+# mysql
 ```
 ```
 > use mysql;
