@@ -23,7 +23,7 @@
                 <div id = "estoque">
                     <div class = "row">
                         <div class = "col">
-                            <form method = "GET">
+                            <form action = "estoque" method = "POST">
                                 <table class = "striped">
                                     <caption>Lista Produtos</caption>
                                     <thead>

@@ -3,17 +3,11 @@ package server.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.SequenceGenerator;
 
 @Entity(name = "produtos")
 public class Product {
     @Id
-    @SequenceGenerator(name = "prod", sequenceName =  "produto")
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "prod")
-    @Column(name = "id", length = 36, updatable = false, nullable = false)
-    private String id;
+    private Long id;
     @Column(name = "name")
     private String name;
     @Column(name = "description")
@@ -31,11 +25,11 @@ public class Product {
 
     public Product() { }
 
-    public String getId() {
+    public Long getId() {
         return this.id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

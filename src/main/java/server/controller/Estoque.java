@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.annotation.WebServlet;
 import java.io.PrintWriter;
+import java.util.List;
+import java.util.ArrayList;
 import server.model.Product;
 import server.model.ProductDAOImpl;
 
@@ -14,7 +16,13 @@ public class Estoque extends HttpServlet{
     @Override
     public void doGet (HttpServletRequest req, HttpServletResponse res) throws ServletException{
         try {
-            req.setAttribute("products", new ProductDAOImpl().getProducts());
+            List<Product> produtos;
+            try {
+                produtos = new ProductDAOImpl().getProducts();
+            } catch (Exception e) {
+                produtos = new ArrayList<Product>();
+            }
+            req.setAttribute("products", produtos);
             req.getRequestDispatcher("/static/estoque.jsp").forward(req, res);
         } catch (Exception e) {
             System.out.println("Erro em 10 ou Servlet!");
@@ -25,6 +33,7 @@ public class Estoque extends HttpServlet{
         try {
             req.setCharacterEncoding("UTF-8");
             Product product = new Product();
+            product.setId(5L);
             product.setName(req.getParameter("name"));
             product.setDescription(req.getParameter("description"));
             product.setCurrency(req.getParameter("currency"));
