@@ -39,7 +39,7 @@
                                     <tbody>
                                     <%
                                         List<Product> products = (List<Product>) request.getAttribute("products");
-                                        for ( Product prod : products ){
+                                        for ( Product prod : products ) {
                                             out.print("<tr>");
                                             out.print("<td>" + prod.getName() + "</td>");
                                             out.print("<td>" + prod.getDescription() + "</td>");
@@ -50,6 +50,30 @@
                                             out.print("</tr>");
                                         }
                                     %>
+                                    </tbody>
+                                </table>
+                            </form>
+                            <form action = "estoque" method = "POST">
+                                <table class = "striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Nome</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input type = 'text' name = 'name'/></td>
+                                            <td>
+                                                <select name = "options">
+                                                    <option value = "excluir" selected>Excluir</option>
+                                                    <option value = "editar">Editar</option>
+                                                    <option value = "criar">Criar</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <input type = "submit" value = "Submit" style = "align-items: center"/>
+                                            </td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </form>

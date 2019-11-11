@@ -28,22 +28,24 @@ public class Estoque extends HttpServlet{
             System.out.println("Erro em 10 ou Servlet!");
         }
     }
+
     @Override
     public void doPost (HttpServletRequest req, HttpServletResponse res) throws ServletException{
         try {
             req.setCharacterEncoding("UTF-8");
-            Product product = new Product();
-            product.setId(5L);
-            product.setName(req.getParameter("name"));
-            product.setDescription(req.getParameter("description"));
-            product.setCurrency(req.getParameter("currency"));
-            product.setPrice(Float.parseFloat(req.getParameter("price")));
-            product.setCode(req.getParameter("code"));
-            product.setAmount(Integer.parseInt(req.getParameter("amount")));
-            product.setUnit(req.getParameter("unit"));
-            Product saveProduct = new ProductDAOImpl().saveProduct(product);
-            req.setAttribute("products", new ProductDAOImpl().getProducts());
-            req.getRequestDispatcher("/static/estoque.jsp").forward(req, res);
+            List<Product> produtos = new ProductDAOImpl().findByName(req.getParameter("name"));
+            Product product = produtos.get(0);
+            if (req.getParameter("options").equals("editar")) {
+                req.setAttribute("product", product);
+                req.getRequestDispatcher("/static/cadastro.jsp").forward(req, res);
+            } else if (req.getParameter("options").equals("excluir")) {
+                Product product = new ProductDAOImpl().deleteProduct(product);
+            } else if (req.getParameter("options").equals("criar")) {
+
+            } else {
+                req.setAttribute("products", new ProductDAOImpl().getProducts());
+                req.getRequestDispatcher("/static/estoque.jsp").forward(req, res);
+            }
         } catch (Exception e) {
             System.out.println("Erro em 10 ou Servlet!");
         }

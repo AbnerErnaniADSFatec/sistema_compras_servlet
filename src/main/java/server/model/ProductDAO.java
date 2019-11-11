@@ -9,4 +9,5 @@ public interface ProductDAO {
     public List<Product> findByName(String name);
     public Product updateProduct(Product product_old, Product product_new);
     public Product deleteProduct(Product product);
+    public Long generateID();
 }

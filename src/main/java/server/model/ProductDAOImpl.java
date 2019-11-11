@@ -9,6 +9,7 @@ import javax.persistence.Query;
 
 public class ProductDAOImpl implements ProductDAO{
     public Product saveProduct(Product product) {
+        product.setId(this.generateID());
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("estoque");     
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
@@ -78,12 +79,21 @@ public class ProductDAOImpl implements ProductDAO{
 
     public Product deleteProduct(Product product) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("estoque");     
-        EntityManager em = emf.createEntityManager();  
+        EntityManager em = emf.createEntityManager();
+        Product prod = em.find(Product.class, product.getId());
         em.getTransaction().begin();
-        em.remove(product);
+        em.remove(prod);
         em.getTransaction().commit();
         em.close();
         emf.close();
         return product;
+    }
+
+    public Long generateID() {
+        List<Product> products = this.getProducts();
+        Long id;
+        try { id = ((products.get(products.size() - 1).getId()) + 1); }
+        catch (Exception e) { id = 1L; }
+        return id;
     }
 }
