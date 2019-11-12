@@ -1,5 +1,7 @@
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <%@ page contentType = "text/html" pageEncoding = "UTF-8" %>
+<%@ page import = "java.util.*" %>
+<%@ page import = "server.model.Product" %>
 <html>
     <head>
         <meta charset = "UTF-8">
@@ -22,11 +24,11 @@
                     <div class = "row">
                         <div class = "col">
                             <div class = "search-box">
-                                <form action = "caixa" method = "GET">
+                                <form action = "caixa" method = "POST">
                                     <div class = "row">
                                         <div class = "col-10">
                                             <div>
-                                                <input type = "text" name = "name" placeholder = "Código do Produto"/>
+                                                <input type = "text" name = "value" placeholder = "Busca..."/>
                                             </div>
                                         </div>
                                         <div class = "col">
@@ -36,7 +38,7 @@
                                         </div>
                                     </div>
                                 </form>
-                                <form action = "caixa" method = "GET">
+                                <form action = "relatorio" method = "GET">
                                     <table class = "striped">
                                         <caption>Resultado da pesquisa</caption>
                                         <thead>
@@ -47,33 +49,26 @@
                                                 <th>Código do Produto</th>
                                                 <th>Quantidade</th>
                                                 <th>Unidade</th>
-                                                <th></th>
-                                                <th></th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>KitKat</td>
-                                                <td>Chocolate</td>
-                                                <td>R$ 2,10</td>
-                                                <td>274671264128</td>
-                                                <td>
-                                                    <div class = "qtd-prod">
-                                                        <input type = "number" min = "1" name = "name"/>
-                                                    </div>
-                                                </td>
-                                                <td>unid</td>
-                                                <td>
-                                                    <input type = "submit" value = "Comprar" style = "align-items: center"/>
-                                                </td>
-                                                <td>
-                                                    <input type = "reset" value = "Cancelar" style = "align-items: center"/>
-                                                </td>
-                                            </tr>
+                                        <tbody>  
+                                            <%
+                                                List<Product> products = (List<Product>) request.getAttribute("products");
+                                                for ( Product prod : products ) {
+                                                    out.print("<tr>");
+                                                    out.print("<td>" + prod.getName() + "</td>");
+                                                    out.print("<td>" + prod.getDescription() + "</td>");
+                                                    out.print("<td>" + prod.getCurrency() + " " + String.format("%.2f", prod.getPrice()) + "</td>");
+                                                    out.print("<td>" + prod.getCode() + "</td>");
+                                                    out.print("<td>" + prod.getUnit() + "</td>");
+                                                    out.print("<td><div class = 'qtd-prod'><input type = 'number' min = '1' name = 'quant" +
+                                                        + (String) prod.getId() +
+                                                    "'/></div></td>");
+                                                    out.print("</tr>");
+                                                }
+                                            %>
                                         </tbody>
                                     </table>
-                                </form>
-                                <form action = "relatorio" method = "GET">
                                     <table class = "striped">
                                         <thead>
                                             <tr>
