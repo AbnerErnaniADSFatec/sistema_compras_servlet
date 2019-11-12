@@ -57,12 +57,12 @@
                                 <table class = "striped">
                                     <thead>
                                         <tr>
-                                            <th>Nome</th>
+                                            <th>Código do produto</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td><input type = 'text' name = 'name'/></td>
+                                            <td><input type = 'text' name = 'code'/></td>
                                             <td>
                                                 <select name = "options">
                                                     <option value = "excluir" selected>Excluir</option>

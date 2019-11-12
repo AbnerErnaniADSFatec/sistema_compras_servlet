@@ -60,6 +60,16 @@ public class ProductDAOImpl implements ProductDAO{
         return products;
     }
 
+    public List<Product> findByCode(String code) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("estoque");     
+        EntityManager em = emf.createEntityManager();
+        Query query = em.createQuery("SELECT prod FROM produtos prod WHERE prod.code = '" + code + "'");
+        List<Product> products = query.getResultList();
+        em.close();
+        emf.close();
+        return products;
+    }
+
     public Product updateProduct(Product product_old, Product product_new) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("estoque");     
         EntityManager em = emf.createEntityManager();
