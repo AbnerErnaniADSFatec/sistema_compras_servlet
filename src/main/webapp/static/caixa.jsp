@@ -61,9 +61,7 @@
                                                     out.print("<td>" + prod.getCurrency() + " " + String.format("%.2f", prod.getPrice()) + "</td>");
                                                     out.print("<td>" + prod.getCode() + "</td>");
                                                     out.print("<td>" + prod.getUnit() + "</td>");
-                                                    out.print("<td><div class = 'qtd-prod'><input type = 'number' min = '1' name = 'quant" +
-                                                        + (String) prod.getId() +
-                                                    "'/></div></td>");
+                                                    out.print("<td><div class = 'qtd-prod'><input type = 'number' min = '1' name = 'quant'/></div></td>");
                                                     out.print("</tr>");
                                                 }
                                             %>
