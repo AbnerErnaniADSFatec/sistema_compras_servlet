@@ -34,7 +34,11 @@ public class Estoque extends HttpServlet{
         try {
             req.setCharacterEncoding("UTF-8");
             List<Product> produtos = new ProductDAOImpl().findByCode(req.getParameter("code"));
-            Product product = produtos.get(0);
+            if (produtos.isEmpty()) {
+                Product product = new Product;
+            } else {
+                Product product = produtos.get(0);
+            }
             req.setAttribute("option", req.getParameter("options"));
             if (req.getParameter("options").equals("editar")) {
                 req.setAttribute("product", product);
