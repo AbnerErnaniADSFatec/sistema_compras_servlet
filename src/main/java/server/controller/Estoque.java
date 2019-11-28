@@ -34,24 +34,25 @@ public class Estoque extends HttpServlet{
         try {
             req.setCharacterEncoding("UTF-8");
             List<Product> produtos = new ProductDAOImpl().findByCode(req.getParameter("code"));
+            Product product;
             if (produtos.isEmpty()) {
-                Product product = new Product;
+                product = new Product();
             } else {
-                Product product = produtos.get(0);
+                product = produtos.get(0);
             }
             req.setAttribute("option", req.getParameter("options"));
             if (req.getParameter("options").equals("editar")) {
                 req.setAttribute("product", product);
                 req.getRequestDispatcher("/static/cadastro.jsp").forward(req, res);
             } else if (req.getParameter("options").equals("excluir")) {
-                Product prod = new ProductDAOImpl().deleteProduct(product);
+                Product prod; 
+                try {
+                    prod = new ProductDAOImpl().deleteProduct(product);
+                } catch (Exception e) {
+                    prod = new Product();
+                }
                 req.setAttribute("products", new ProductDAOImpl().getProducts());
                 req.getRequestDispatcher("/static/estoque.jsp").forward(req, res);
-            } else if (req.getParameter("options").equals("criar")) {
-                Product prod = new Product();
-                prod.setCode(req.getParameter("code"));
-                req.setAttribute("product", prod);
-                req.getRequestDispatcher("/static/cadastro.jsp").forward(req, res);
             }
         } catch (Exception e) {
             System.out.println("Erro em 10 ou Servlet!");

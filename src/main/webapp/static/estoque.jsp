@@ -58,6 +58,7 @@
                                     <thead>
                                         <tr>
                                             <th>Código do produto</th>
+                                            <th>Ação</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -65,9 +66,8 @@
                                             <td><input type = 'text' name = 'code'/></td>
                                             <td>
                                                 <select name = "options">
-                                                    <option value = "excluir" selected>Excluir</option>
-                                                    <option value = "editar">Editar</option>
-                                                    <option value = "criar">Criar</option>
+                                                    <option value = "editar" selected>Editar</option>
+                                                    <option value = "excluir">Excluir</option>
                                                 </select>
                                             </td>
                                             <td>

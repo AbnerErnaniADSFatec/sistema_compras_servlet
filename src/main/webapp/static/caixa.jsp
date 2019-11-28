@@ -38,7 +38,7 @@
                                         </div>
                                     </div>
                                 </form>
-                                <form action = "relatorio" method = "GET">
+                                <form action = "caixa" method = "GET">
                                     <table class = "striped">
                                         <caption>Resultado da pesquisa</caption>
                                         <thead>
@@ -61,12 +61,15 @@
                                                     out.print("<td>" + prod.getCurrency() + " " + String.format("%.2f", prod.getPrice()) + "</td>");
                                                     out.print("<td>" + prod.getCode() + "</td>");
                                                     out.print("<td>" + prod.getUnit() + "</td>");
-                                                    out.print("<td><div class = 'qtd-prod'><input type = 'number' min = '1' name = 'quant'/></div></td>");
+                                                    out.print("<td><div class = 'qtd-prod'><input type = 'number' min = '1' name = 'quant-" + prod.getCode() +"'/></div></td>");
+                                                    out.print("<td><input type = 'submit' value = 'Comprar' style = 'align-items: center'/></td>");
                                                     out.print("</tr>");
                                                 }
                                             %>
                                         </tbody>
                                     </table>
+                                </form>
+                                <form action = "relatorio" method = "GET">
                                     <table class = "striped">
                                         <thead>
                                             <tr>

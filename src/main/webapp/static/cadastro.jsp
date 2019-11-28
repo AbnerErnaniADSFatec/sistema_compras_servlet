@@ -9,6 +9,7 @@
         <title>Cadastro de Produtos</title>
         <link rel = "icon" type = "image/x-icon" href = "assets/save.ico">
         <link rel = "stylesheet" href = "styles/style.css">
+        <link rel = "stylesheet" href = "styles/cadastro.css">
     </head>
     <body>
         <h4 class = "is-center">Cadastro de Produtos</h4>
@@ -25,12 +26,16 @@
                         <div class = "col">
                             <h3>
                                 <%
-                                    String option = (String) request.getAttribute("option");
-                                    if (option.equals("criar")) {
+                                    try {
+                                        String option = (String) request.getAttribute("option");
+                                        if (option.equals("criar")) {
+                                            out.print("Cadastrar novo produto");
+                                        }
+                                        else if (option.equals("editar")){
+                                            out.print("Editar produto existente");
+                                        }
+                                    } catch (Exception e) {
                                         out.print("Cadastrar novo produto");
-                                    }
-                                    else if (option.equals("editar")){
-                                        out.print("Editar produto existente");
                                     }
                                 %>
                             </h3>
@@ -50,6 +55,14 @@
                                         out.print("Código do produto: <input type = 'text' name = 'code'/><br>");
                                         out.print("Quantidade no estoque: <input type = 'number' min = '1' name = 'amount'/><br>");
                                         out.print("Unidade: <input type = 'text' name = 'unit'/><br>");
+                                    } else if (!product.getCode().trim().equals("") && product.getName().trim().equals("")) {
+                                        out.print("Nome: <input type = 'text' name = 'name'/><br>");
+                                        out.print("Descrição: <input type = 'text' name = 'description'/><br>");
+                                        out.print("Moeda: <input type = 'text' name = 'currency'/><br>");
+                                        out.print("Preço: <input type = 'number'  min = '0.00' max = '10000.00' step = '0.01' name = 'price'/><br>");
+                                        out.print("Código do produto: <input type = 'text' name = 'code' value = '" + product.getCode() + "'/><br>");
+                                        out.print("Quantidade no estoque: <input type = 'number' min = '1' name = 'amount'/><br>");
+                                        out.print("Unidade: <input type = 'text' name = 'unit'/><br>");
                                     } else {
                                         out.print("Nome: <input type = 'text' name = 'name' value = '" + product.getName() + "'/><br>");
                                         out.print("Descrição: <input type = 'text' name = 'description' value = '" + product.getDescription() + "'/><br>");
@@ -60,8 +73,21 @@
                                         out.print("Unidade: <input type = 'text' name = 'unit' value = '" + product.getUnit() + "'/><br>");
                                     }
                                 %>
-                                <input type = "reset" value = "Cancelar" style = "align-items: center"/>
-                                <input type = "submit" value = "Cadastrar" style = "align-items: center"/>
+                                <%
+                                    try {
+                                        String option = (String) request.getAttribute("option");
+                                        if (option.equals("criar")) {
+                                            out.print("<input type = 'reset' value = 'Cancelar' style = 'align-items: center'/>");
+                                            out.print("<input type = 'submit' value = 'Cadastrar' style = 'align-items: center'/>");
+                                        } else if (option.equals("editar")) {
+                                            out.print("<input type = 'reset' value = 'Cancelar' style = 'align-items: center'/>");
+                                            out.print("<input type = 'submit' value = 'Salvar' style = 'align-items: center'/>");
+                                        }
+                                    } catch (Exception e) {
+                                        out.print("<input type = 'reset' value = 'Cancelar' style = 'align-items: center'/>");
+                                        out.print("<input type = 'submit' value = 'Cadastrar' style = 'align-items: center'/>");
+                                    }
+                                %>
                             </form>
                         </div>
                     </div>

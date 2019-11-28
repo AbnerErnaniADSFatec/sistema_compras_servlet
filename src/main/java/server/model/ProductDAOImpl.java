@@ -69,22 +69,23 @@ public class ProductDAOImpl implements ProductDAO{
         emf.close();
         return products;
     }
-
-    public Product updateProduct(Product product_old, Product product_new) {
+    
+    public Product updateProduct(Product product) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("estoque");     
         EntityManager em = emf.createEntityManager();
+        Product prod = em.find(Product.class, product.getId());
         em.getTransaction().begin();
-        product_old.setName(product_new.getName());
-        product_old.setDescription(product_new.getDescription());
-        product_old.setCurrency(product_new.getCurrency());
-        product_old.setPrice(product_new.getPrice());
-        product_old.setCode(product_new.getCode());
-        product_old.setAmount(product_new.getAmount());
-        product_old.setUnit(product_new.getUnit());
+        prod.setName(product.getName());
+        prod.setDescription(product.getDescription());
+        prod.setCurrency(product.getCurrency());
+        prod.setPrice(product.getPrice());
+        prod.setCode(product.getCode());
+        prod.setAmount(product.getAmount());
+        prod.setUnit(product.getUnit());
         em.getTransaction().commit();
         em.close();
         emf.close();
-        return product_new;
+        return prod;
     }
 
     public Product deleteProduct(Product product) {
