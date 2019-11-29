@@ -32,20 +32,20 @@
                                     </caption>
                                     <thead>
                                         <tr>
+                                            <th>Código do Produto</th>
                                             <th>Nome</th>
                                             <th>Descrição</th>
                                             <th>Preço</th>
-                                            <th>Código do Produto</th>
                                             <th>Quantidade</th>
                                             <th>Unidade</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
+                                            <td>274671264128</td>
                                             <td>KitKat</td>
                                             <td>Chocolate</td>
                                             <td>R$ 2,10</td>
-                                            <td>274671264128</td>
                                             <td>
                                                 <div class = "card">
                                                     <p>3</p>

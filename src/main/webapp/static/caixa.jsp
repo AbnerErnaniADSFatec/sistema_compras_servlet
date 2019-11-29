@@ -43,10 +43,10 @@
                                         <caption>Resultado da pesquisa</caption>
                                         <thead>
                                             <tr>
+                                                <th>Código do Produto</th>
                                                 <th>Nome</th>
                                                 <th>Descrição</th>
                                                 <th>Preço</th>
-                                                <th>Código do Produto</th>
                                                 <th>Quantidade</th>
                                                 <th>Unidade</th>
                                             </tr>
@@ -56,12 +56,12 @@
                                                 List<Product> products = (List<Product>) request.getAttribute("products");
                                                 for ( Product prod : products ) {
                                                     out.print("<tr>");
+                                                    out.print("<td>" + prod.getCode() + "</td>");
                                                     out.print("<td>" + prod.getName() + "</td>");
                                                     out.print("<td>" + prod.getDescription() + "</td>");
                                                     out.print("<td>" + prod.getCurrency() + " " + String.format("%.2f", prod.getPrice()) + "</td>");
-                                                    out.print("<td>" + prod.getCode() + "</td>");
-                                                    out.print("<td>" + prod.getUnit() + "</td>");
                                                     out.print("<td><div class = 'qtd-prod'><input type = 'number' min = '1' name = 'quant-" + prod.getCode() +"'/></div></td>");
+                                                    out.print("<td>" + prod.getUnit() + "</td>");
                                                     out.print("<td><input type = 'submit' value = 'Comprar' style = 'align-items: center'/></td>");
                                                     out.print("</tr>");
                                                 }

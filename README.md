@@ -1,6 +1,6 @@
 ## Sistema de Compras usando um Servlet Básico
 
-Um servidor básico usando a linguagem de programação Java e Servlet, necessário Java 8 ou superior e o gradle instalado.
+Uma aplicação básico usando a linguagem de programação Java e Servlet, necessário Java 8 ou superior e o gradle instalado, é preciso baixar a [máquina virtual](https://fatecspgov-my.sharepoint.com/:u:/g/personal/abner_anjos_fatec_sp_gov_br/EQlkY3XhOL9JucxSdpoPzVMBQY_k5AxQJXwaQcfkjBDlgw?e=qdZQuh) para o servidor de banco de dados.
 
 ## Instalação do MariaDB
 ```

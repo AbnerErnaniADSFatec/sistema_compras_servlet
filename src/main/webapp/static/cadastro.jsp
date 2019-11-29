@@ -48,27 +48,19 @@
                                         product = new Product();
                                     }
                                     if ( product.getCode() == null || product.getCode().trim().equals("") ) {
-                                        out.print("Nome: <input type = 'text' name = 'name'/><br>");
-                                        out.print("Descrição: <input type = 'text' name = 'description'/><br>");
-                                        out.print("Moeda: <input type = 'text' name = 'currency'/><br>");
-                                        out.print("Preço: <input type = 'number'  min = '0.00' max = '10000.00' step = '0.01' name = 'price'/><br>");
                                         out.print("Código do produto: <input type = 'text' name = 'code'/><br>");
-                                        out.print("Quantidade no estoque: <input type = 'number' min = '1' name = 'amount'/><br>");
-                                        out.print("Unidade: <input type = 'text' name = 'unit'/><br>");
-                                    } else if (!product.getCode().trim().equals("") && product.getName().trim().equals("")) {
                                         out.print("Nome: <input type = 'text' name = 'name'/><br>");
                                         out.print("Descrição: <input type = 'text' name = 'description'/><br>");
                                         out.print("Moeda: <input type = 'text' name = 'currency'/><br>");
                                         out.print("Preço: <input type = 'number'  min = '0.00' max = '10000.00' step = '0.01' name = 'price'/><br>");
-                                        out.print("Código do produto: <input type = 'text' name = 'code' value = '" + product.getCode() + "'/><br>");
                                         out.print("Quantidade no estoque: <input type = 'number' min = '1' name = 'amount'/><br>");
                                         out.print("Unidade: <input type = 'text' name = 'unit'/><br>");
                                     } else {
+                                        out.print("Código do produto: <input type = 'text' name = 'code' value = '" + product.getCode() + "'/><br>");
                                         out.print("Nome: <input type = 'text' name = 'name' value = '" + product.getName() + "'/><br>");
                                         out.print("Descrição: <input type = 'text' name = 'description' value = '" + product.getDescription() + "'/><br>");
                                         out.print("Moeda: <input type = 'text' name = 'currency' value = '" + product.getCurrency() + "'/><br>");
                                         out.print("Preço: <input type = 'number'  min = '0.00' max = '10000.00' step = '0.01' name = 'price' value = '" + product.getPrice() + "'/><br>");
-                                        out.print("Código do produto: <input type = 'text' name = 'code' value = '" + product.getCode() + "'/><br>");
                                         out.print("Quantidade no estoque: <input type = 'number' min = '1' name = 'amount' value = '" + product.getAmount() + "'/><br>");
                                         out.print("Unidade: <input type = 'text' name = 'unit' value = '" + product.getUnit() + "'/><br>");
                                     }

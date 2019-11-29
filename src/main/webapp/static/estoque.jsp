@@ -28,10 +28,10 @@
                                     <caption>Lista Produtos</caption>
                                     <thead>
                                         <tr>
+                                            <th>Código do Produto</th>
                                             <th>Nome</th>
                                             <th>Descrição</th>
                                             <th>Preço</th>
-                                            <th>Código do Produto</th>
                                             <th>Quantidade no estoque</th>
                                             <th>Unidade</th>
                                         </tr>
@@ -41,10 +41,10 @@
                                         List<Product> products = (List<Product>) request.getAttribute("products");
                                         for ( Product prod : products ) {
                                             out.print("<tr>");
+                                            out.print("<td>" + prod.getCode() + "</td>");
                                             out.print("<td>" + prod.getName() + "</td>");
                                             out.print("<td>" + prod.getDescription() + "</td>");
                                             out.print("<td>" + prod.getCurrency() + " " + String.format("%.2f", prod.getPrice()) + "</td>");
-                                            out.print("<td>" + prod.getCode() + "</td>");
                                             out.print("<td>" + prod.getAmount() + "</td>");
                                             out.print("<td>" + prod.getUnit() + "</td>");
                                             out.print("</tr>");
