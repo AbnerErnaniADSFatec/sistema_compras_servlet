@@ -1,4 +1,4 @@
-package server.model;
+package server.model.product;
 import java.util.List;
 
 public interface ProductDAO {

@@ -1,7 +1,7 @@
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <%@ page contentType = "text/html" pageEncoding = "UTF-8" %>
 <%@ page import = "java.util.*" %>
-<%@ page import = "server.model.Product" %>
+<%@ page import = "server.model.product.Product" %>
 <html>
     <head>
         <meta charset = "UTF-8">
@@ -38,14 +38,15 @@
                                         </div>
                                     </div>
                                 </form>
-                                <form action = "caixa" method = "GET">
-                                    <table class = "striped">
+                                <form action = "relatorio" method = "POST">
+                                    <table id = 'products' class = "striped">
                                         <caption>Resultado da pesquisa</caption>
                                         <thead>
                                             <tr>
                                                 <th>Código do Produto</th>
                                                 <th>Nome</th>
                                                 <th>Descrição</th>
+                                                <th></th>
                                                 <th>Preço</th>
                                                 <th>Quantidade</th>
                                                 <th>Unidade</th>
@@ -59,17 +60,27 @@
                                                     out.print("<td>" + prod.getCode() + "</td>");
                                                     out.print("<td>" + prod.getName() + "</td>");
                                                     out.print("<td>" + prod.getDescription() + "</td>");
-                                                    out.print("<td>" + prod.getCurrency() + " " + String.format("%.2f", prod.getPrice()) + "</td>");
-                                                    out.print("<td><div class = 'qtd-prod'><input type = 'number' min = '1' name = 'quant-" + prod.getCode() +"'/></div></td>");
+                                                    out.print("<td>" + prod.getCurrency() + "</td>");
+                                                    out.print(
+                                                        "<td>" +
+                                                            "<div id = 'valor-" + prod.getCode() +"'>" + 
+                                                                String.format("%.2f", prod.getPrice()) +
+                                                            "</div>" +
+                                                        "</td>"
+                                                    );
+                                                    out.print(
+                                                        "<td>" +
+                                                            "<div class = 'qtd-prod'>" +
+                                                                "<input type = 'number' value = '0' min = '0' id = 'quant-" + prod.getCode() +"' name = 'quant-" + prod.getCode() +"'/>" +
+                                                            "</div>" +
+                                                        "</td>"
+                                                    );
                                                     out.print("<td>" + prod.getUnit() + "</td>");
-                                                    out.print("<td><input type = 'submit' value = 'Comprar' style = 'align-items: center'/></td>");
                                                     out.print("</tr>");
                                                 }
                                             %>
                                         </tbody>
                                     </table>
-                                </form>
-                                <form action = "relatorio" method = "GET">
                                     <table class = "striped">
                                         <thead>
                                             <tr>
@@ -81,7 +92,11 @@
                                             <tr>
                                                 <td>R$</td>
                                                 <td>
-                                                    <label>0,00</label>
+                                                    <label>
+                                                        <div class = "valorTotal" id = "valorTotal" style = "color: red">
+                                                            0,00
+                                                        </div>
+                                                    </label>
                                                 </td>
                                                 <td>
                                                     <input type = "submit" value = "Finalizar Compra" style = "align-items: center"/>
@@ -101,5 +116,6 @@
                 Sistema para o gerennciamento de caixa
             </p>
         </footer>
+        <script src = "scripts/count.js"></script>
     </body>
 </html>

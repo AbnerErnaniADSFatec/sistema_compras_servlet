@@ -2,7 +2,7 @@
 <%@ page contentType = "text/html" pageEncoding = "UTF-8" %>
 <%@ page import = "java.util.*" %>
 <%@ page import = "java.lang.Math" %>
-<%@ page import = "server.model.Product" %>
+<%@ page import = "server.model.product.Product" %>
 <html>
     <head>
         <meta charset = "UTF-8">

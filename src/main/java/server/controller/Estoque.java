@@ -9,8 +9,8 @@ import javax.servlet.annotation.WebServlet;
 import java.io.PrintWriter;
 import java.util.List;
 import java.util.ArrayList;
-import server.model.Product;
-import server.model.ProductDAOImpl;
+import server.model.product.Product;
+import server.model.product.ProductDAOImpl;
 
 public class Estoque extends HttpServlet{
     @Override
