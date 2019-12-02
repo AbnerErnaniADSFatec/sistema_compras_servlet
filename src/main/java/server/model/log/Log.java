@@ -40,8 +40,8 @@ public class Log {
         this.products = products;
     }
 
-    public Map<String, float> getTotalByProduct() {
-        Map<String, float> list = new HashMap<String,String>();
+    public Map<String, Float> getTotalByProduct() {
+        Map<String, Float> list = new HashMap<String, Float>();
         for( Product prod : this.getProducts()) {
             list.put(prod.getCode(), (prod.getPrice() * prod.getAmount()));
         }
