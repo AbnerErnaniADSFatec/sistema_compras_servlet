@@ -18,7 +18,7 @@
             <div class = "hero is-full-screen">
                 <nav class = "tabs is-center">
                     <a href = "caixa">Home</a>
-                    <a href = "#">Relatório</a>
+                    <a href = "relatorio">Relatório</a>
                     <a href = "estoque">Estoque</a>
                     <a href = "cadastro">Cadastro de Produtos</a>
                 </nav>

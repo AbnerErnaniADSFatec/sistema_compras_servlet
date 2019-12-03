@@ -22,6 +22,7 @@ public class Relatorio extends HttpServlet{
         try {
             Log relatorio = new Log();
             relatorio.setDate(new Date());
+            relatorio.setProducts(new ArrayList<Product>());
             req.setAttribute("relatorio", relatorio);
             req.getRequestDispatcher("/static/relatorio.jsp").forward(req, res);
         } catch (Exception e) {
