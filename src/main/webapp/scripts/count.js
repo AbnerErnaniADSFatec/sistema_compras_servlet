@@ -8,11 +8,13 @@ var inc = (
         return function(){
             var valorTotal = 0
             for (var i = 0, range = codes.length; i < range; i++) {
-                valorTotal = 
-                    valorTotal + (
-                        parseFloat(document.getElementById('valor-' + codes[i]).textContent) * 
-                        parseFloat(document.getElementById('quant-' + codes[i]).value)
-                    );
+                if (!isNaN(parseFloat(document.getElementById('valor-' + codes[i]).textContent)) && !isNaN(parseFloat(document.getElementById('quant-' + codes[i]).value))) {
+                    valorTotal = 
+                        valorTotal + (
+                            parseFloat(document.getElementById('valor-' + codes[i]).textContent) * 
+                            parseFloat(document.getElementById('quant-' + codes[i]).value)
+                        );
+                }
             }
             return valorTotal;
         };

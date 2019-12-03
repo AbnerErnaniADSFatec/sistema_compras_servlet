@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.annotation.WebServlet;
 import java.io.PrintWriter;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.List;
 import java.util.ArrayList;
 import server.model.product.Product;
@@ -18,6 +21,7 @@ public class Relatorio extends HttpServlet{
     public void doGet (HttpServletRequest req, HttpServletResponse res) throws ServletException{
         try {
             Log relatorio = new Log();
+            relatorio.setDate(new Date());
             req.setAttribute("relatorio", relatorio);
             req.getRequestDispatcher("/static/relatorio.jsp").forward(req, res);
         } catch (Exception e) {
@@ -35,9 +39,22 @@ public class Relatorio extends HttpServlet{
                 produtos = new ArrayList<Product>();
             }
             Log relatorio = new Log();
-            // for(Product prod : produtos){
-            //     .add(Integer.parseInt(req.getParameter("quant-" + prod.getCode())));
-            // }
+            relatorio.setDate(new Date());
+            List prods = new ArrayList<Product>();
+            Product p;
+            for (Product prod : produtos) {
+                try {
+                    p = prod;
+                    p.setAmout(Integer.parseInt(req.getParameter("quant-" + prod.getCode())));
+                    prods.add(p);
+                    prod.setAmout(prod.getAmount() - Integer.parseInt(req.getParameter("quant-" + prod.getCode())));
+                    Product updateProduct = new ProductDAOImpl().updateProduct(prod)
+                } catch (Exception e) {
+                    continue;
+                }
+            }
+            relatorio.setProducts(prods);
+            req.setAttribute("relatorio", relatorio);
             req.getRequestDispatcher("/static/relatorio.jsp").forward(req, res);
         } catch (Exception e) {
             System.out.println("Erro em 10 ou Servlet");

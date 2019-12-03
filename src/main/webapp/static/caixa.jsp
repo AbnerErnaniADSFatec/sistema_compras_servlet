@@ -56,27 +56,29 @@
                                             <%
                                                 List<Product> products = (List<Product>) request.getAttribute("products");
                                                 for ( Product prod : products ) {
-                                                    out.print("<tr>");
-                                                    out.print("<td>" + prod.getCode() + "</td>");
-                                                    out.print("<td>" + prod.getName() + "</td>");
-                                                    out.print("<td>" + prod.getDescription() + "</td>");
-                                                    out.print("<td>" + prod.getCurrency() + "</td>");
-                                                    out.print(
-                                                        "<td>" +
-                                                            "<div id = 'valor-" + prod.getCode() +"'>" + 
-                                                                String.format("%.2f", prod.getPrice()) +
-                                                            "</div>" +
-                                                        "</td>"
-                                                    );
-                                                    out.print(
-                                                        "<td>" +
-                                                            "<div class = 'qtd-prod'>" +
-                                                                "<input type = 'number' value = '0' min = '0' id = 'quant-" + prod.getCode() +"' name = 'quant-" + prod.getCode() +"'/>" +
-                                                            "</div>" +
-                                                        "</td>"
-                                                    );
-                                                    out.print("<td>" + prod.getUnit() + "</td>");
-                                                    out.print("</tr>");
+                                                    if (prod.getAmount() != 0) {
+                                                        out.print("<tr>");
+                                                        out.print("<td>" + prod.getCode() + "</td>");
+                                                        out.print("<td>" + prod.getName() + "</td>");
+                                                        out.print("<td>" + prod.getDescription() + "</td>");
+                                                        out.print("<td>" + prod.getCurrency() + "</td>");
+                                                        out.print(
+                                                            "<td>" +
+                                                                "<div id = 'valor-" + prod.getCode() +"'>" + 
+                                                                    String.format("%.2f", prod.getPrice()) +
+                                                                "</div>" +
+                                                            "</td>"
+                                                        );
+                                                        out.print(
+                                                            "<td>" +
+                                                                "<div class = 'qtd-prod'>" +
+                                                                    "<input type = 'number' value = '0' min = '0' id = 'quant-" + prod.getCode() +"' name = 'quant-" + prod.getCode() +"'/>" +
+                                                                "</div>" +
+                                                            "</td>"
+                                                        );
+                                                        out.print("<td>" + prod.getUnit() + "</td>");
+                                                        out.print("</tr>");
+                                                    }
                                                 }
                                             %>
                                         </tbody>

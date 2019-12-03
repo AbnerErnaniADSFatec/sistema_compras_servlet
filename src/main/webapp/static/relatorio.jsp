@@ -18,7 +18,7 @@
             <div class = "hero is-full-screen">
                 <nav class = "tabs is-center">
                     <a href = "caixa">Home</a>
-                    <a href = "relatorio">Relatório</a>
+                    <a href = "#">Relatório</a>
                     <a href = "estoque">Estoque</a>
                     <a href = "cadastro">Cadastro de Produtos</a>
                 </nav>
@@ -29,8 +29,8 @@
                                 <caption>
                                     <div class = "card">
                                         <%
-                                            Date date = new Date();
-                                            out.print("<p> Relatório " + date + "</p>");
+                                            Log relatorio = (Log) request.getAttribute("relatorio");
+                                            out.print("<p> Relatório " + relatorio.getDate() + "</p>");
                                         %>
                                     </div>
                                 </caption>
@@ -42,20 +42,31 @@
                                         <th>Preço</th>
                                         <th>Quantidade</th>
                                         <th>Unidade</th>
+                                        <th>Total</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>274671264128</td>
-                                        <td>KitKat</td>
-                                        <td>Chocolate</td>
-                                        <td>R$ 2,10</td>
-                                        <td>
-                                            <div class = "card">
-                                                <p>3</p>
-                                            </div>
-                                        </td>
-                                        <td>unid</td>
+                                        <%
+                                            Log relatorio = (Log) request.getAttribute("relatorio");
+                                            Map<String, Float> list = relatorio.getTotalByProduct();
+                                            for(Product prod : relatorio.getProducts()) {
+                                                out.print("<td>" + prod.getCode() + "</td>");
+                                                out.print("<td>" + prod.getName() + "</td>");
+                                                out.print("<td>" + prod.getDescription() + "</td>");
+                                                out.print("<td>" + prod.getCurrency() + " " + String.format("%.2f", prod.getPrice()) + "</td>");
+                                                out.print(
+                                                    "<td>" + 
+                                                        "<div class = 'card'>" +
+                                                            "<p>" + prod.getAmount() + "</p>" +
+                                                        "</div>" +
+                                                    "</td>"
+                                                );
+                                                out.print("<td>" + prod.getUnit() + "</td>");
+                                                out.print("<td>" + prod.getCurrency() + " " + String.format("%.2f", list.get(prod.getCode())) + "</td>");
+                                                out.print("</tr>");
+                                            }
+                                        %>
                                     </tr>
                                 </tbody>
                                 </table>
@@ -63,15 +74,27 @@
                                     <thead>
                                         <tr>
                                             <th>Moeda</th>
-                                            <th>Total</th>
+                                            <th>Valor Total</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>R$</td>
-                                        <td>
-                                            <label>0,00</label>
-                                        </td>
+                                        <%
+                                            Log relatorio = (Log) request.getAttribute("relatorio");
+                                            try {
+                                                out.print("<td>" + relatorio.getProducts().get(0).getCurrency() + "</td>");
+                                                out.print(
+                                                    "<td>" +
+                                                        "<label>" +
+                                                            String.format("%.2f", relatorio.getTotal()) +
+                                                        "</label>" +
+                                                    "</td>"
+                                                );
+                                            } catch (Exception e) {
+                                                out.print("<td>R$</td>");
+                                                out.print("<td><label>0,00</label></td>");
+                                            }
+                                        %>                                        
                                     </tr>
                                 </tbody>
                             </table>
