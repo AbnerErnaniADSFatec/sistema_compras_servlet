@@ -44,7 +44,7 @@
                                             out.print("<td>" + prod.getCode() + "</td>");
                                             out.print("<td>" + prod.getName() + "</td>");
                                             out.print("<td>" + prod.getDescription() + "</td>");
-                                            out.print("<td>" + prod.getCurrency() + " " + String.format("%.2f", prod.getPrice()) + "</td>");
+                                            out.print("<td>" + prod.getCurrency() + " " + prod.getPriceFormat() + "</td>");
                                             out.print("<td>" + prod.getAmount() + "</td>");
                                             out.print("<td>" + prod.getUnit() + "</td>");
                                             out.print("</tr>");

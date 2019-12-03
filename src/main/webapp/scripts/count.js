@@ -30,8 +30,7 @@ window.onload = function() {
             } else {
                 document.getElementById("valorTotal").style.color = 'green';
             }
-            document.getElementById("valorTotal").style.fontSize = '12pt';
-            document.getElementById('valorTotal').textContent = valor.toFixed(2).toString();
+            document.getElementById('valorTotal').textContent = valor.toFixed(2.5).toString();
         };
     }
 };

@@ -43,15 +43,15 @@ public class Log {
     public Map<String, Float> getTotalByProduct() {
         Map<String, Float> list = new HashMap<String, Float>();
         for( Product prod : this.getProducts()) {
-            list.put(prod.getCode(), (Float.parseFloat(prod.getPrice()) * Float.parseFloat(prod.getAmount())));
+            list.put(prod.getCode(), (prod.getPrice() * prod.getAmount()));
         }
         return list;
     }
 
     public Float getTotal() {
-        Float valor = 0;
+        Float valor = new Float(0);
         for( Product prod : this.getProducts()) {
-            valor = valor + (Float.parseFloat(prod.getPrice()) * Float.parseFloat(prod.getAmount()));
+            valor = valor + (prod.getPrice() * prod.getAmount());
         }
         return valor;
     }

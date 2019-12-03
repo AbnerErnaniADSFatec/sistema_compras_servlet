@@ -26,7 +26,7 @@ public class Relatorio extends HttpServlet{
             req.setAttribute("relatorio", relatorio);
             req.getRequestDispatcher("/static/relatorio.jsp").forward(req, res);
         } catch (Exception e) {
-            System.out.println("Erro em 10 ou Servlet");
+            System.out.println("Erro em 10 ou Servlet" + e.toString());
         }
     }
     @Override
@@ -45,14 +45,15 @@ public class Relatorio extends HttpServlet{
             Product p;
             for (Product prod : produtos) {
                 try {
-                    p = prod;
-                    p.setAmout(Integer.parseInt(req.getParameter("quant-" + prod.getCode())));
-                    prods.add(p);
-                    prod.setAmout(prod.getAmount() - Integer.parseInt(req.getParameter("quant-" + prod.getCode())));
-                    Product updateProduct = new ProductDAOImpl().updateProduct(prod)
-                } catch (Exception e) {
-                    continue;
-                }
+                    int quant = Integer.parseInt(req.getParameter("quant-" + prod.getCode()));
+                    if (quant != 0) {
+                        prod.setAmount(prod.getAmount() - quant);
+                        Product updateProduct = new ProductDAOImpl().updateProduct(prod);
+                        p = prod;
+                        p.setAmount(quant);
+                        prods.add(p);
+                    }
+                } catch (Exception e) {}
             }
             relatorio.setProducts(prods);
             req.setAttribute("relatorio", relatorio);

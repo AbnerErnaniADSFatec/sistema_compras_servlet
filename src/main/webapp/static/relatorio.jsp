@@ -48,7 +48,6 @@
                                 <tbody>
                                     <tr>
                                         <%
-                                            Log relatorio = (Log) request.getAttribute("relatorio");
                                             Map<String, Float> list = relatorio.getTotalByProduct();
                                             for(Product prod : relatorio.getProducts()) {
                                                 out.print("<td>" + prod.getCode() + "</td>");
@@ -80,7 +79,6 @@
                                 <tbody>
                                     <tr>
                                         <%
-                                            Log relatorio = (Log) request.getAttribute("relatorio");
                                             try {
                                                 out.print("<td>" + relatorio.getProducts().get(0).getCurrency() + "</td>");
                                                 out.print(
@@ -92,7 +90,7 @@
                                                 );
                                             } catch (Exception e) {
                                                 out.print("<td>R$</td>");
-                                                out.print("<td><label>0,00</label></td>");
+                                                out.print("<td><label>0.00</label></td>");
                                             }
                                         %>                                        
                                     </tr>

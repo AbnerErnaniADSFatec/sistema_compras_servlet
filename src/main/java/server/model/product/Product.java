@@ -61,6 +61,10 @@ public class Product {
         return this.price;
     }
 
+    public String getPriceFormat() {
+        return (((int) this.getPrice() ) + "." + ((int) ((this.getPrice() - ((int) this.getPrice())) * 100)) + "");
+    }
+
     public void setPrice(float price) {
         this.price = price;
     }

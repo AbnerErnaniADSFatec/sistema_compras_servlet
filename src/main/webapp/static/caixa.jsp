@@ -64,8 +64,8 @@
                                                         out.print("<td>" + prod.getCurrency() + "</td>");
                                                         out.print(
                                                             "<td>" +
-                                                                "<div id = 'valor-" + prod.getCode() +"'>" + 
-                                                                    String.format("%.2f", prod.getPrice()) +
+                                                                "<div id = 'valor-" + prod.getCode() +"'>" +
+                                                                    prod.getPriceFormat() +
                                                                 "</div>" +
                                                             "</td>"
                                                         );
@@ -96,7 +96,7 @@
                                                 <td>
                                                     <label>
                                                         <div class = "valorTotal" id = "valorTotal" style = "color: red">
-                                                            0,00
+                                                            0.00
                                                         </div>
                                                     </label>
                                                 </td>
