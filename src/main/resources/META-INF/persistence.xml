@@ -11,9 +11,9 @@
       <!-- <property name = "hibernate.dialect" value = "org.hibernate.dialect.MySQLDialect" /> -->
       <property name = "hibernate.dialect" value = "org.hibernate.dialect.MariaDB53Dialect" />
       <property name = "javax.persistence.jdbc.driver" value = "org.mariadb.jdbc.Driver" />
-      <property name = "javax.persistence.jdbc.url" value = "jdbc:mysql://172.16.4.187:3306/estoque" />
-      <property name = "javax.persistence.jdbc.user" value = "abner" />
-      <property name = "javax.persistence.jdbc.password" value = "152" />
+      <property name = "javax.persistence.jdbc.url" value = "jdbc:mysql://localhost:3306/estoque" />
+      <property name = "javax.persistence.jdbc.user" value = "servlet" />
+      <property name = "javax.persistence.jdbc.password" value = "servlet" />
       <property name = "hibernate.show_sql" value = "true" />
       <property name = "hibernate.hbm2ddl.auto" value = "update" />
       <property name = "hibernate.format_sql" value = "true" />
